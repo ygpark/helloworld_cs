@@ -1,0 +1,33 @@
+﻿
+- 참고 사이트 : https://www.base64decode.org/
+
+
+
+RecvID: %205670000.65012501
+RecvName: %20조일암
+RefRecvID: 
+RefRecvName: 
+HrefRecvID: 
+HrefRecvName: 
+Title: 
+MessageType: TEXT
+Content-Type: text/plain;%20charset%61UTF-8
+Font: Name=굴림 Style= Color=clBlack Size=9
+Date: 2021-06-29%2009:40:55
+Attach: 
+AttachServer: 
+AttachInfoEx: 
+FormSize: 380%20318
+ConfirmMSG: 1
+PlainMessage: 가각갂...............힍힎힏힐힑힒힓힔힕힖힗힘힙힚힛힜힝힞힟힠힡힢힣%21
+
+{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\lang1042\f0\fs18\'b0\'a1\'b0\'a2\'81\'41\'81\'42\'b0\'a3\'81\'43\'81\'44\'b0\'a4\'.........
+............................
+............................
+............................
+............................
+8\'f9\'c6\'41\'c6\'42\'c6\'43\'c8\'fa\'c6\'44\'c6\'45\'c6\'46\'c6\'47\'c6\'48\'c6\'49\'c6\'4a\'c8\'fb\'c8\'fc\'c6\'4b\'c8\'fd\'c6\'4c\'c8\'fe\'c6\'4d\'c6\'4e\'c6\'4f\'c6\'50\'c6\'51\'c6\'52\par
+\par
+}

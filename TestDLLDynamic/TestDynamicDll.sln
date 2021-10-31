@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDynamicDll", "TestDynamicDll\TestDynamicDll.csproj", "{EE110185-3B69-4958-A03C-D7A977A3F25B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDll1", "TestDll1\TestDll1.csproj", "{4B378C7B-F980-4284-8789-0CB7EEDD17AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDll2", "TestDll2\TestDll2.csproj", "{2E473317-DFF8-4806-B29D-E2B90DFEA986}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE110185-3B69-4958-A03C-D7A977A3F25B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE110185-3B69-4958-A03C-D7A977A3F25B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE110185-3B69-4958-A03C-D7A977A3F25B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE110185-3B69-4958-A03C-D7A977A3F25B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B378C7B-F980-4284-8789-0CB7EEDD17AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B378C7B-F980-4284-8789-0CB7EEDD17AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B378C7B-F980-4284-8789-0CB7EEDD17AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B378C7B-F980-4284-8789-0CB7EEDD17AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E473317-DFF8-4806-B29D-E2B90DFEA986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E473317-DFF8-4806-B29D-E2B90DFEA986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E473317-DFF8-4806-B29D-E2B90DFEA986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E473317-DFF8-4806-B29D-E2B90DFEA986}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNDesk_Options", "TestNDesk_Options\TestNDesk_Options.csproj", "{088C4465-F0BE-478B-B16B-1E76C6A63CC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{088C4465-F0BE-478B-B16B-1E76C6A63CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088C4465-F0BE-478B-B16B-1E76C6A63CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088C4465-F0BE-478B-B16B-1E76C6A63CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088C4465-F0BE-478B-B16B-1E76C6A63CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D0C09D6-9053-4E6F-9195-17F8D4F05BF4}
+	EndGlobalSection
+EndGlobal

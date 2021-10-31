@@ -1,0 +1,78 @@
+
+<!-- saved from url=(0047)http://dvd.sourceforge.net/dvdinfo/packhdr.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Pack Header</title>
+</head>
+
+<body bgcolor="f0f0ff" background="./Pack_Header_files/dvdbg.gif">
+<h2>Pack Header</h2>
+<table border="1">
+<tbody><tr><th colspan="8"><center>byte 0</center></th><th colspan="8"><center>byte 1</center></th>
+    <th colspan="8"><center>byte 2</center></th><th colspan="8"><center>byte 3</center></th></tr>
+<tr><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+</tr>
+<tr><th bgcolor="9999ff" colspan="24">0000 0000 0000 0000 0000 0001<br>start code</th>
+    <td bgcolor="66ff66" colspan="8">1011 1010<br>PACK identifier</td>
+</tr>
+</tbody></table>
+
+<table border="1">
+<tbody><tr><th colspan="8"><center>byte 4</center></th><th colspan="8"><center>byte 5</center></th>
+    <th colspan="8"><center>byte 6</center></th><th colspan="8"><center>byte 7</center></th>
+    <th colspan="8"><center>byte 8</center></th><th colspan="8"><center>byte 9</center></th></tr>
+<tr><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+</tr>
+<tr><th bgcolor="9999ff" colspan="2">01</th>
+    <td bgcolor="66ff66" colspan="3"><center>SCR 32..30</center></td>
+    <th bgcolor="9999ff" colspan="1">1</th>
+    <td bgcolor="66ff66" colspan="15"><center>SCR 29..15</center></td>
+    <th bgcolor="9999ff" colspan="1">1</th>
+    <td bgcolor="66ff66" colspan="15"><center>SCR 14..00</center></td>
+    <th bgcolor="9999ff" colspan="1">1</th>
+    <td bgcolor="66ff66" colspan="9"><center>SCR_ext</center></td>
+    <th bgcolor="9999ff" colspan="1">1</th>
+</tr>
+</tbody></table>
+
+<table border="1">
+<tbody><tr><th colspan="8"><center>byte 10</center></th><th colspan="8"><center>byte 11</center></th>
+    <th colspan="8"><center>byte 12</center></th><th colspan="8"><center>byte 13</center></th></tr>
+<tr><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+    <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+</tr>
+<tr><td bgcolor="66ff66" colspan="22"><center>Program_Mux_Rate</center></td>
+    <th bgcolor="9999ff" colspan="1">1</th>
+    <th bgcolor="9999ff" colspan="1">1</th>
+    <td bgcolor="66ff66" colspan="5"><center>reserved</center></td>
+    <td bgcolor="66ff66" colspan="3">pack_stuffing_length</td>
+</tr>
+</tbody></table>
+PACK identifier -- 0xBA
+<ul>
+<li>SCR and SCR_ext together are the System Clock Reference, a counter driven at 27MHz, used as
+    a reference to synchronize streams. The clock is divided by 300 (to match the 90KHz clocks
+    such as PTS/DTS), the quotient is SCR (33 bits), the remainder is SCR_ext (9 bits)
+</li><li>Program_Mux_Rate -- This is a 22 bit integer specifying the rate at which the program stream
+    target decoder receives the Program Stream during the pack in which it is included. The
+    value of program_mux_rate is measured in units of 50 bytes/second. The value 0 is forbidden.
+</li><li>pack_stuffing_length -- A 3 bit integer specifying the number of stuffing bytes which follow
+    this field.
+</li><li>stuffing byte  -- This is a fixed 8-bit value equal to '1111 1111' that can be inserted by
+    the encoder, for example to meet the requirements of the channel.  It is discarded by the
+    decoder.
+</li></ul>
+
+<br><a href="http://dvd.sourceforge.net/dvdinfo/index.html"><img src="./Pack_Header_files/dvd-sm.gif">DVD-Video</a> home
+
+
+
+</body></html>
