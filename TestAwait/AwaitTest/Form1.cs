@@ -28,7 +28,7 @@ namespace AwaitTest
         {
             for (int i = 0; i < 10; i++)
             {
-                int rst = PlusPlus();
+                int rst = Sleep1Plus1();
                 label1.Text = rst.ToString();
             }
         }
@@ -39,13 +39,17 @@ namespace AwaitTest
             
             for (int i = 0; i < 10; i++)
             {
-                var taskPlusPlus = Task.Run(() => PlusPlus()); // 여기서 PlusPlus() 메소드가 실행된다.
+                var taskPlusPlus = Task.Run(() => Sleep1Plus1()); // 여기서 PlusPlus() 메소드가 실행된다.
                 rst = await taskPlusPlus;                            // 여기서 PlusPlus() 메소드가 끝날때까지 기다린다.
                 label1.Text = rst.ToString();
             }
         }
 
-        private int PlusPlus()
+        /// <summary>
+        /// 1초 Sleep 후 1을 더한다.
+        /// </summary>
+        /// <returns></returns>
+        private int Sleep1Plus1()
         {
             
             Thread.Sleep(1000);
