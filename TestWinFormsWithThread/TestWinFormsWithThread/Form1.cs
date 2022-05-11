@@ -20,12 +20,25 @@ namespace TestWinFormsWithThread
         {
             InitializeComponent();
             _worker1 = new BackgroundWorker();
-            _worker2 = new BackgroundWorker();
             _worker1.DoWork += _worker1_DoWork;
+            _worker1.RunWorkerCompleted += _worker1_RunWorkerCompleted;
+            _worker1.ProgressChanged += _worker1_ProgressChanged;
+            _worker1.WorkerReportsProgress = true;
+            _worker2 = new BackgroundWorker();
             _worker2.DoWork += _worker2_DoWork;
             _timer = new Timer();
             _timer.Interval = 10;
             _timer.Tick += _timer_Tick;
+        }
+
+        private void _worker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void _worker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("완료");
         }
 
         private void _timer_Tick(object sender, EventArgs e)
@@ -55,10 +68,14 @@ namespace TestWinFormsWithThread
         
         private void _worker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 System.Threading.Thread.Sleep(10);
 
+                //ReportProgress는 GUI Thread에서 호출됨.
+                _worker1.ReportProgress(i+1);
+
+                //Thread(BackgroundWoker)에서 GUI에 접근할 때 InvokeIfRequired 사용해야함.
                 label2.InvokeIfRequired(o =>
                 {
                    o.Text = i.ToString();
@@ -72,7 +89,7 @@ namespace TestWinFormsWithThread
 
         private void _worker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 System.Threading.Thread.Sleep(10);
 
