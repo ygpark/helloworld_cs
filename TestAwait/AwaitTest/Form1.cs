@@ -7,7 +7,8 @@ namespace AwaitTest
 {
     public partial class Form1 : Form
     {
-        private int _sum = 1;
+        private int _sum1 = 1;
+        private int _sum2 = 1;
 
         public Form1()
         {
@@ -23,43 +24,72 @@ namespace AwaitTest
         {
             SyncRun();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.ShowDialog();
+        }
 
         private void SyncRun()
         {
-            for (int i = 0; i < 10; i++)
-            {
-                int rst = Sleep1Plus1();
-                label1.Text = rst.ToString();
-            }
+            FirstAsync();
+            SecondAsync();
         }
 
         private async void AsyncRun()
         {
             int rst;
-            
-            for (int i = 0; i < 10; i++)
+
+            label3.Text = "시작";
+
+            //var taskPlusPlus2 = Task.Run(() => Sleep1Plus2());
+
+            var aa = FirstAsync();
+            var bb = SecondAsync();
+
+            await aa;
+            await bb;
+
+            label3.Text = "종료";
+
+        }
+
+        async private Task FirstAsync()
+        {
+            await Task.Run( () =>
             {
-                var taskPlusPlus = Task.Run(() => Sleep1Plus1()); // 여기서 PlusPlus() 메소드가 실행된다.
-                rst = await taskPlusPlus;                            // 여기서 PlusPlus() 메소드가 끝날때까지 기다린다.
-                label1.Text = rst.ToString();
-            }
+                _sum1 = 0;
+                for (int i = 0; i < 100; i++)
+                {
+                    Thread.Sleep(30);
+                    _sum1++;
+                    label1.Invoke(new Action(() =>
+                    {
+                        label1.Text = _sum1.ToString();
+                    }));
+                }
+            });
+
+            return;
         }
 
-        /// <summary>
-        /// 1초 Sleep 후 1을 더한다.
-        /// </summary>
-        /// <returns></returns>
-        private int Sleep1Plus1()
+        async private Task SecondAsync()
         {
-            
-            Thread.Sleep(1000);
-            return _sum++;
-        }
+            await Task.Run( () =>
+            {
+                _sum2 = 0;
+                for (int i = 0; i < 100; i++)
+                {
+                    Thread.Sleep(30);
+                    _sum2++;
+                    label2.Invoke(new Action(() =>
+                    {
+                        label2.Text = _sum2.ToString();
+                    }));
+                }
+            });
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form1 f = new Form1();
-            f.ShowDialog();
+            return;
         }
     }
 }
